@@ -6,7 +6,7 @@ const searchProductByName = (product) => {
     if (stockProducts[index].productName === product) {
       prd = index;
     }
-  };
+  }
   if (prd === undefined) {
     return null;
   }
@@ -14,7 +14,7 @@ const searchProductByName = (product) => {
   let price = stockProducts[prd].price;
   return {
     description: desc,
-    formattedPrice: `R$ ${price}`
+    formattedPrice: `R$ ${price}`,
   };
 };
 

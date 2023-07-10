@@ -11,7 +11,6 @@ const getProductsRichInVitamin = () => {
       
       let value = Object.values(stockProducts[index].nutritionalInfo.vitamins);
       let key = Object.keys(stockProducts[index].nutritionalInfo.vitamins);
-      //while (top.length) {top.pop();}
       
       for (var index2 = 0; index2 < key.length; index2 += 1) {
         top.push(`${key[index2]} - ${value[index2]}`);
@@ -24,6 +23,7 @@ const getProductsRichInVitamin = () => {
           vitamins: top
         }
       )
+      
     }
   }
   return productsVitamin;

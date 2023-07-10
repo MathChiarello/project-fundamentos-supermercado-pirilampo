@@ -7,8 +7,8 @@ const getLowStockProducts = () => {
       let product = stockProducts[index].productName;
       let quantity = stockProducts[index].quantityInStock;
       productsLowStock.push(`${product}: ${quantity} unidades`);
-    };
-  };
+    }
+  }
   return productsLowStock;
 };
 

@@ -2,33 +2,29 @@ const stockProducts = require('./data.json');
 
 const getProductsWithAllergyOrIntoleranceInfo = () => {
   const productsWithAllergyOrIntolerance = [];
-  const itensProducts = [];
   for (let index = 0; index < stockProducts.length; index += 1) {
-    if (stockProducts[index].allergyOrIntolerance) {    
-      let desc = stockProducts[index].description;
-      let price = stockProducts[index].price;
-      let allergyOrIntolerance2 = stockProducts[index].allergyOrIntolerance.toString().replace(',' , ' ').replace(',' , ' ').replace(',' , ' ')
-      let allergyOrIntoleranceMessage = `Pode conter: ${allergyOrIntolerance2}`
-
+    if (stockProducts[index].allergyOrIntolerance) {
+      let allergyMessage = `Pode conter: ${stockProducts[index].allergyOrIntolerance.toString()
+        .replace(',', ' ').replace(',', ' ').replace(',', ' ')}`;
       productsWithAllergyOrIntolerance.push(
         {
-          description: desc,
-          formattedPrice: `R$ ${price}`,
-          allergyOrIntoleranceMessage: allergyOrIntoleranceMessage
-        }
-      )
+          description: stockProducts[index].description,
+          formattedPrice: `R$ ${stockProducts[index].price}`,
+          allergyOrIntoleranceMessage: allergyMessage,
+        },
+      );
     } else {
-      let desc = stockProducts[index].description;
-      let price = stockProducts[index].price;
       productsWithAllergyOrIntolerance.push(
         {
-          description: desc,
-          formattedPrice: `R$ ${price}`,
-        }
-      )
+          description: stockProducts[index].description,
+          formattedPrice: `R$ ${stockProducts[index].price}`,
+        },
+      );
     }
   }
   return productsWithAllergyOrIntolerance;
 };
+
+console.log(getProductsWithAllergyOrIntoleranceInfo());
 
 module.exports = { getProductsWithAllergyOrIntoleranceInfo };
