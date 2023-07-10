@@ -1,34 +1,24 @@
 const stockProducts = require('./data.json');
 
 const getProductsRichInVitamin = () => {
-  const productsVitamin = [];
-  const top = [];
-
-  for (let index = 0; index < stockProducts.length; index += 1) {
-    if (stockProducts[index].nutritionalInfo.vitamins) {    
-      let desc = stockProducts[index].description;
-      let price = stockProducts[index].price;
-      
-      let value = Object.values(stockProducts[index].nutritionalInfo.vitamins);
-      let key = Object.keys(stockProducts[index].nutritionalInfo.vitamins);
-      
-      for (var index2 = 0; index2 < key.length; index2 += 1) {
-        top.push(`${key[index2]} - ${value[index2]}`);
-      }
-
-      productsVitamin.push(
-        {
-          description: desc,
-          formattedPrice: `R$ ${price}`,
-          vitamins: top
-        }
-      )
-      
-    }
+  const arrayProducts = [];
+  function vitaminsArray(object) {
+    let arrayVitamins = [];
+    for (let index = 0; index < Object.entries(object).length; index += 1) {
+      arrayVitamins.push(`${Object.entries(object)[index][0]} - ${Object.entries(object)[index][1]}`);
+    } return arrayVitamins;
   }
-  return productsVitamin;
+  for (let index = 0; index < stockProducts.length; index += 1) {
+    if (stockProducts[index].nutritionalInfo.vitamins) {
+      arrayProducts.push(
+        {
+          description: stockProducts[index].description,
+          formattedPrice: `R$ ${stockProducts[index].price}`,
+          vitaminsInformation: vitaminsArray(stockProducts[index].nutritionalInfo.vitamins),
+        },
+      );
+    }
+  } return arrayProducts;
 };
-
-console.log(getProductsRichInVitamin());
 
 module.exports = { getProductsRichInVitamin };

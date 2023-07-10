@@ -1,6 +1,6 @@
 const stockProducts = require('./data.json');
 
-const getProductsWithAllergyOrIntoleranceInfo = () => {
+function getProductsWithAllergyOrIntoleranceInfo() {
   const productsWithAllergyOrIntolerance = [];
   for (let index = 0; index < stockProducts.length; index += 1) {
     if (stockProducts[index].allergyOrIntolerance) {
@@ -21,10 +21,7 @@ const getProductsWithAllergyOrIntoleranceInfo = () => {
         },
       );
     }
-  }
-  return productsWithAllergyOrIntolerance;
-};
-
-console.log(getProductsWithAllergyOrIntoleranceInfo());
+  } return productsWithAllergyOrIntolerance;
+}
 
 module.exports = { getProductsWithAllergyOrIntoleranceInfo };
