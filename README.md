@@ -1,10 +1,8 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Project Supermercado Pirilampo - Trybe
+
+Esse projeto contempla o estudo sobre as dependências listadas abaixo:
+
+- Javascript
+- Github, entre outros.
+
+> O projeto consiste na criação de uma série de funções que contemplam atividades solicitadas pela dona do mercado, como listagem do total de produtos em estoque, listar um produto específico basead na informação passada, quantidade de produtos zerados ou com baixo volume em estoque, entre outros.
